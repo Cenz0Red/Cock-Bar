@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Cock_Bar"
         tools:targetApi="31">
         <activity
+            android:name=".MixCocktailActivity"
+            android:exported="false" />
+        <activity
             android:name=".MyCocktailsActivity"
             android:exported="false" />
         <activity

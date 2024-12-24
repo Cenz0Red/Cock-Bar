@@ -3,6 +3,7 @@ package com.example.cock_bar
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,13 +16,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-
-
         if (this.cockDbManager.readDbData() == null) {
             setContentView(R.layout.activity_main)
         } else {
             val cockIntent = Intent(this, MyCocktailsActivity::class.java)
             startActivity(cockIntent)
+        }
+
+        val buttonPls: Button = findViewById(R.id.Button_1st_pls)
+        buttonPls.setOnClickListener{
+            val mixIntent = Intent(this, MixCocktailActivity::class.java)
+            startActivity(mixIntent)
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -30,11 +35,10 @@ class MainActivity : AppCompatActivity() {
             insets
 
 
-
         }
+
 
     }
 
 }
-
 
